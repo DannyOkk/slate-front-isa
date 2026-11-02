@@ -252,6 +252,39 @@ En la raíz del proyecto podés ejecutar:
 
 ---
 
+## Preparacion EAS
+
+El proyecto incluye `eas.json` con perfiles `development`, `preview` y
+`production`. La Fase 17 solo prepara la configuración; no genera builds ni
+publica la aplicación.
+
+Antes de vincular el proyecto con una cuenta Expo:
+
+```powershell
+npx eas-cli@latest login
+npx eas-cli@latest init
+```
+
+`eas init` debe ejecutarse con la cuenta del propietario del proyecto y agregará
+el `projectId` en la configuración Expo. No se debe inventar ese identificador
+ni guardar credenciales en el repositorio.
+
+El paquete Android definido para futuros builds es:
+
+```text
+com.dannyokk.slate
+```
+
+Luego del login y vínculo, un build preview se podría generar con:
+
+```powershell
+npx eas-cli@latest build --platform android --profile preview
+```
+
+Ese comando queda fuera de esta fase porque genera un build cloud.
+
+---
+
 ## Validacion de Fase 16
 
 La validacion web se ejecuta contra la API HTTPS de Azure configurada en

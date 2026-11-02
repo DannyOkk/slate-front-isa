@@ -252,6 +252,46 @@ En la raíz del proyecto podés ejecutar:
 
 ---
 
+## Validacion de Fase 16
+
+La validacion web se ejecuta contra la API HTTPS de Azure configurada en
+`.env`:
+
+```powershell
+npm install
+npx expo start --web
+```
+
+Tambien se verifico la exportacion estatica:
+
+```powershell
+npx expo export --platform web
+```
+
+Se generaron rutas para inicio, login, registro, clientes, deudores, detalle
+de cliente y configuracion. El flujo cloud validado incluye registro, login,
+consulta y creacion de clientes, detalle, fiado, pago y consulta de deudores.
+La API puede responder `403` ante credenciales o tokens invalidos; la app debe
+mostrar el estado de error y limpiar la sesion.
+
+### Checklist manual en Android con Expo Go
+
+1. Copiar `.env.example` a `.env` y confirmar la URL de Azure.
+2. Ejecutar `npx expo start -c` y abrir el proyecto con Expo Go.
+3. Registrar o iniciar sesion.
+4. Crear un cliente y abrir su cuenta corriente.
+5. Registrar un fiado y confirmar saldo y nivel de riesgo.
+6. Registrar un pago y confirmar que el saldo se actualiza.
+7. Abrir "Quien me debe" y entrar al detalle del deudor.
+8. Programar un recordatorio y aceptar permisos de notificaciones.
+9. Cerrar sesion y comprobar que la app vuelve al login.
+
+Las notificaciones locales y el selector nativo de fecha/hora deben validarse
+en Android; Expo Web solo permite comprobar que la interfaz compile y que no
+bloquee la navegacion.
+
+---
+
 ## 📄 Licencia
 
 Este proyecto se distribuye bajo los términos de la licencia MIT.

@@ -67,7 +67,16 @@ Copy-Item .env.example .env
 cp .env.example .env
 ```
 
-### 2. Obtener la dirección IP local de tu computadora
+### 2. Configurar la API
+
+Para validar la aplicación contra Azure, `.env.example` ya apunta a la API
+HTTPS remota de Slate:
+
+```env
+EXPO_PUBLIC_API_URL=https://slate-back-isa.calmriver-a6a4e760.canadacentral.azurecontainerapps.io/api
+```
+
+Para desarrollo local con el backend en la misma red, usar una IP privada:
 
 > [!IMPORTANT]
 > **No utilices `localhost` ni `127.0.0.1`**: Tu celular es un dispositivo independiente dentro de la red. Si ponés `localhost`, el celular intentará conectarse a sí mismo y la conexión fallará. Debés configurar la dirección IP local (IPv4) de la máquina donde corre el backend.

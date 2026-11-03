@@ -272,7 +272,7 @@ ni guardar credenciales en el repositorio.
 El paquete Android definido para futuros builds es:
 
 ```text
-com.dannyokk.slate
+com.slate.app
 ```
 
 Luego del login y vínculo, un build preview se podría generar con:

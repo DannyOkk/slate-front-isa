@@ -275,6 +275,12 @@ El paquete Android definido para futuros builds es:
 com.slate.app
 ```
 
+El proyecto ya está vinculado a EAS bajo la cuenta `dannyokk`:
+
+```text
+projectId: 1cbd6c69-df05-472c-ae3f-e851afedc5cc
+```
+
 Luego del login y vínculo, un build preview se podría generar con:
 
 ```powershell
